@@ -78,6 +78,9 @@
     vlc
     cava
     fastfetch
+    mpv
+    cataclysm-dda
+    qbittorrent
 
     # Python versions
     python39
