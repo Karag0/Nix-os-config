@@ -136,7 +136,7 @@
     pyenv
     tree
     ranger
-
+    tmux
     # KDE Apps
     dolphin
     konsole
