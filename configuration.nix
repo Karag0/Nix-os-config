@@ -110,6 +110,7 @@
     virtualbox
     sqlite
     nix-prefetch-git   
+    gparted
     # 3D Software
     freecad
     blender
