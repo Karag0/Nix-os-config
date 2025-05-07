@@ -82,7 +82,7 @@
     cataclysm-dda
     qbittorrent
     nemo
-
+    jq
     # Python versions
     python39
     python310
