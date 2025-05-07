@@ -114,6 +114,7 @@
     # Creative apps
     krita
     kdenlive
+    natron
 
     # Editors & IDEs
     vscodium
