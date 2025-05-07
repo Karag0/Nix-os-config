@@ -12,6 +12,18 @@
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "ru_RU.UTF-8";
+  i18n.extraLocaleSettings = {{
+  imports = [ ./hardware-configuration.nix ];
+
+  # Bootloader
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  # Network & Localization
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
+  time.timeZone = "Europe/Moscow";
+  i18n.defaultLocale = "ru_RU.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "ru_RU.UTF-8";
     LC_IDENTIFICATION = "ru_RU.UTF-8";
@@ -23,6 +35,142 @@
     LC_TELEPHONE = "ru_RU.UTF-8";
     LC_TIME = "ru_RU.UTF-8";
   };
+
+  # X11 + KDE Plasma 6
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
+  # Keyboard layout
+  services.xserver.xkb = {
+    layout = "us,ru";
+    options = "grp:alt_shift_toggle";
+  };
+
+  # Sound
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+
+  # User account with fish as default shell
+  users.users.vlad = {
+    isNormalUser = true;
+    description = "Vlad";
+    shell = pkgs.fish; # Fish как shell по умолчанию
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      git
+      curl
+      vim
+      emacs
+      neovim
+      neovide
+      fish
+    ];
+  };
+
+  # System packages
+  environment.systemPackages = with pkgs; [
+    # Build tools
+    gnumake
+    cmake
+
+    # Qt Full
+    qt6.full
+
+    # Terminal & Media
+    alacritty # Alacritty как терминал по умолчанию
+    vlc
+    cava
+    fastfetch
+    zsh
+
+    # Python versions
+    python39
+    python310
+    python311
+    python3
+
+    # Java
+    openjdk8
+    openjdk17
+    openjdk21
+
+    # Dev tools
+    rustc
+    maven
+    gradle
+    gcc
+    clang
+    go
+    lua
+    docker
+    nixos-generators
+
+    # 3D Software
+    freecad
+    blender
+
+    # Creative apps
+    krita
+    kdenlive
+
+    # Editors & IDEs
+    vscodium
+
+    # Browsers
+    librewolf
+    qutebrowser
+
+    # Office
+    libreoffice-fresh
+
+    # Ai
+    ollama
+    llama-cpp
+
+    # Shell & Tools
+    fish
+    uv
+    pyenv
+
+    # KDE Plasma 6
+    plasma6
+
+    # KDE Apps
+    dolphin
+    konsole
+    kate
+    kcalc
+    kmix
+    kscreen
+    powerdevil
+
+    # Themes & Decoration
+    breeze
+    breeze-gtk
+    kdecoration-qt6
+  ];
+
+  # Set Alacritty as default terminal emulator via xdg
+  environment.etc."xdg/xdg-kde/XDG_DATA_DIRS".text = ''
+    ${pkgs.xorg.xterm}/share:${pkgs.alacritty}/share
+  '';
+
+  environment.variables.XDG_TERMINAL_EMULATOR = "alacritty";
+
+  # Experimental features
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
+
+  # State version
+  system.stateVersion = "24.11";
+};
 
   # X11 + KDE Plasma 6
   services.xserver.enable = true;
@@ -93,8 +241,7 @@
     clang
     go
     lua
-    docker
-    nixos-generators
+
     # 3D Software
     freecad
     blender
@@ -114,12 +261,9 @@
     librewolf
     qutebrowser
 
-    # Office
+    # Office (correct Russian version)
     libreoffice-fresh
 
-    # Ai
-    ollama
-    llama-cpp
     # Shell & Tools
     fish
     uv
@@ -132,5 +276,5 @@
   };
 
   # State version
-  system.stateVersion = "24.11";
+  system.stateVersion = "24.05";
 }
