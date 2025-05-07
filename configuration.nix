@@ -94,7 +94,7 @@
     go
     lua
     docker
-
+    nixos-generators
     # 3D Software
     freecad
     blender
@@ -132,5 +132,5 @@
   };
 
   # State version
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
