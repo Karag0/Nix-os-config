@@ -81,6 +81,7 @@
     mpv
     cataclysm-dda
     qbittorrent
+    nemo
 
     # Python versions
     python39
@@ -107,6 +108,8 @@
     kdenlive
     gdb
     virtualbox
+    sqlite
+    nix-prefetch-git   
     # 3D Software
     freecad
     blender
@@ -114,7 +117,7 @@
     # Creative apps
     krita
     kdenlive
-
+    inkscape
     # Editors & IDEs
     vscodium
 
@@ -135,7 +138,7 @@
     pyenv
     tree
     ranger
-    tmux
+
     # KDE Apps
     dolphin
     konsole
