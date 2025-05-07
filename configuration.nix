@@ -1,18 +1,5 @@
-{ config, pkgs, lib, ... }:
-
 {
-  imports = [ ./hardware-configuration.nix ];
-
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Network & Localization
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
-  time.timeZone = "Europe/Moscow";
-  i18n.defaultLocale = "ru_RU.UTF-8";
-  i18n.extraLocaleSettings = {{
+  # 📦 Импорт конфигурации железа (всегда в начале)
   imports = [ ./hardware-configuration.nix ];
 
   # Bootloader
@@ -60,7 +47,7 @@
   users.users.vlad = {
     isNormalUser = true;
     description = "Vlad";
-    shell = pkgs.fish; # Fish как shell по умолчанию
+    shell = pkgs.fish; # 🐟 Fish как shell по умолчанию
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       git
@@ -83,11 +70,9 @@
     qt6.full
 
     # Terminal & Media
-    alacritty # Alacritty как терминал по умолчанию
+    alacritty # 💻 Alacritty как терминал по умолчанию
     vlc
     cava
-    fastfetch
-    zsh
 
     # Python versions
     python39
@@ -160,7 +145,6 @@
   environment.etc."xdg/xdg-kde/XDG_DATA_DIRS".text = ''
     ${pkgs.xorg.xterm}/share:${pkgs.alacritty}/share
   '';
-
   environment.variables.XDG_TERMINAL_EMULATOR = "alacritty";
 
   # Experimental features
@@ -170,111 +154,4 @@
 
   # State version
   system.stateVersion = "24.11";
-};
-
-  # X11 + KDE Plasma 6
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
-  # Keyboard layout
-  services.xserver.xkb = {
-    layout = "us,ru";
-    options = "grp:alt_shift_toggle";
-  };
-
-  # Sound
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
-
-  # User account
-  users.users.vlad = {
-    isNormalUser = true;
-    description = "Vlad";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      git
-      curl
-      vim
-      emacs
-      neovim
-      neovide
-      fish
-    ];
-  };
-
-  # System packages
-  environment.systemPackages = with pkgs; [
-    # Build tools
-    gnumake
-    cmake
-
-    # Qt Full
-    qt6.full
-
-    # Terminal & Media
-    alacritty
-    vlc
-    cava
-
-    # Python versions
-    python39
-    python310
-    python311
-    python3
-
-    # Java
-    openjdk8
-    openjdk17
-    openjdk21
-
-    # Dev tools
-    rustc
-    maven
-    gradle
-    gcc
-    clang
-    go
-    lua
-
-    # 3D Software
-    freecad
-    blender
-
-    # Creative apps
-    krita
-    kdenlive
-
-    # Editors & IDEs
-    vim
-    emacs
-    neovim
-    neovide
-    vscodium
-
-    # Browsers
-    librewolf
-    qutebrowser
-
-    # Office (correct Russian version)
-    libreoffice-fresh
-
-    # Shell & Tools
-    fish
-    uv
-    pyenv
-  ];
-
-  # Experimental features
-  nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
-  };
-
-  # State version
-  system.stateVersion = "24.05";
 }
