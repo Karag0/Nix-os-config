@@ -103,6 +103,9 @@
     lua
     docker
     nixos-generators
+    qtcreator
+    kdenlive
+    gdb
 
     # 3D Software
     freecad
