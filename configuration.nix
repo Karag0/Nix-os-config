@@ -1,6 +1,9 @@
+{ config, pkgs, lib, ... }:
+
 {
-  # 📦 Импорт конфигурации железа (всегда в начале)
   imports = [ ./hardware-configuration.nix ];
+
+  programs.fish.enable = true;
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -47,7 +50,7 @@
   users.users.vlad = {
     isNormalUser = true;
     description = "Vlad";
-    shell = pkgs.fish; # 🐟 Fish как shell по умолчанию
+    shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       git
@@ -70,9 +73,10 @@
     qt6.full
 
     # Terminal & Media
-    alacritty # 💻 Alacritty как терминал по умолчанию
+    alacritty
     vlc
     cava
+    fastfetch
 
     # Python versions
     python39
@@ -122,9 +126,8 @@
     fish
     uv
     pyenv
-
-    # KDE Plasma 6
-    plasma6
+    tree
+    ranger
 
     # KDE Apps
     dolphin
@@ -139,6 +142,9 @@
     breeze
     breeze-gtk
     kdecoration-qt6
+
+    # Xorg (для xterm)
+    xorg.xterm
   ];
 
   # Set Alacritty as default terminal emulator via xdg
