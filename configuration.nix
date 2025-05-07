@@ -93,6 +93,7 @@
     clang
     go
     lua
+    docker
 
     # 3D Software
     freecad
