@@ -106,7 +106,7 @@
     qtcreator
     kdenlive
     gdb
-
+    virtualbox
     # 3D Software
     freecad
     blender
@@ -114,7 +114,6 @@
     # Creative apps
     krita
     kdenlive
-    natron
 
     # Editors & IDEs
     vscodium
