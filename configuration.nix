@@ -100,7 +100,7 @@
       lua
       docker
       nixos-generators
-
+      clangd
       # 3D Software
       freecad
       blender
@@ -108,6 +108,7 @@
       # Creative apps
       krita
       kdenlive
+      gimp
 
       # Editors & IDEs
       vscodium
@@ -140,13 +141,10 @@
       powerdevil
 
     ];
-
-    # Set Alacritty as default terminal emulator via xdg
 environment.etc."xdg/xdg-kde/XDG_DATA_DIRS".text = ''
-  ${pkgs.alacritty}/share
+  ${pkgs.xterm}/share:${pkgs.alacritty}/share
 '';
-    '';
-    environment.variables.XDG_TERMINAL_EMULATOR = "alacritty";
+environment.variables.XDG_TERMINAL_EMULATOR = "alacritty"; "alacritty";
 
     # Experimental features
     nix = {
