@@ -82,7 +82,7 @@
     cataclysm-dda
     qbittorrent
     nemo
-    jq
+    gparted
     # Python versions
     python39
     python310
@@ -100,6 +100,7 @@
     gradle
     gcc
     clang
+    clangd
     go
     lua
     docker
@@ -109,8 +110,8 @@
     gdb
     virtualbox
     sqlite
-    nix-prefetch-git   
-    gparted
+    nix-prefetch-git
+    jq   
     # 3D Software
     freecad
     blender
@@ -119,6 +120,8 @@
     krita
     kdenlive
     inkscape
+    audacity
+
     # Editors & IDEs
     vscodium
 
