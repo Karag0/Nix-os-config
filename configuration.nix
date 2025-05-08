@@ -74,6 +74,11 @@
     qt6.qtmultimedia
     qt6.qtwebengine
 
+    # Добавьте Qt 5 и QML-модули
+    qt5.full
+    qt5.qtdeclarative
+    qt5.qtquickcontrols
+    qt5.qtwebengine
     # OpenGL и Vulkan
     mesa
     libGL
@@ -130,6 +135,7 @@
     btop
     tmux
     llvmPackages.libstdcxxClang
+
     # 3D Software
     freecad
     blender
@@ -137,14 +143,14 @@
     # Mix
     stockfish
     en-croissant
-
+    asciiquarium
     # Creative apps
     krita
     kdenlive
     inkscape
     audacity
     obs-studio
-
+    lmms
     # Editors & IDEs
     vscodium
 
@@ -173,11 +179,15 @@
     ranger
     oh-my-fish
     patchelf
+    zsh
+
+
     # KDE Apps
     dolphin
     konsole
     kate
     kcalc
+    kclock
     kmix
     kscreen
     powerdevil
