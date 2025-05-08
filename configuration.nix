@@ -121,7 +121,7 @@
     docker
     nixos-generators
     qtcreator
-    kdenlive
+    kdePackages.kdenlive
     gdb
     virtualbox
     sqlite
@@ -151,8 +151,13 @@
     audacity
     obs-studio
     lmms
+
     # Editors & IDEs
     vscodium
+
+    # Дополнительные зависимости
+    v4l-utils
+    ffmpeg
 
     # Bluetooth пакеты
     bluez
@@ -180,7 +185,7 @@
     oh-my-fish
     patchelf
     zsh
-
+    ltrace
 
     # KDE Apps
     dolphin
@@ -205,5 +210,5 @@
   };
 programs.nix-ld.enable = true;
   # State version
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 }
