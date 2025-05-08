@@ -187,7 +187,7 @@
     konsole
     kate
     kcalc
-    kclock
+    kdePackages.kclock
     kmix
     kscreen
     powerdevil
