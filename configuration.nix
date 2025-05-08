@@ -129,6 +129,7 @@
     bottom
     btop
     tmux
+
     # 3D Software
     freecad
     blender
@@ -170,7 +171,8 @@
     pyenv
     tree
     ranger
-
+    oh-my-fish
+    patchelf
     # KDE Apps
     dolphin
     konsole
