@@ -129,7 +129,7 @@
     bottom
     btop
     tmux
-
+    llvmPackages.libstdcxxClang
     # 3D Software
     freecad
     blender
@@ -193,7 +193,7 @@
   nix = {
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
-
+programs.nix-ld.enable = true;
   # State version
   system.stateVersion = "24.11";
 }
