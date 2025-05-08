@@ -71,7 +71,17 @@
 
     # Qt Full
     qt6.full
+    qt6.qtbase
+    qt6.qtmultimedia
+    qt6.qtwebengine
 
+    # OpenGL и Vulkan
+    mesa
+    libGL
+    vulkan-loader
+    vulkan-validation-layers
+    shaderc
+    vkd3d
     # Terminal & Media
     xterm  # Добавлен xterm
     alacritty
@@ -83,6 +93,8 @@
     qbittorrent
     nemo
     gparted
+    nerdfonts
+
     # Python versions
     python39
     python310
@@ -100,7 +112,6 @@
     gradle
     gcc
     clang
-    clangd
     go
     lua
     docker
