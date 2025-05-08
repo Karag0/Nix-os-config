@@ -135,6 +135,7 @@
     btop
     tmux
     llvmPackages.libstdcxxClang
+    python312Packages.pip
 
     # 3D Software
     freecad
