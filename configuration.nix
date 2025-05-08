@@ -45,7 +45,6 @@
     alsa.enable = true;
     pulse.enable = true;
   };
-
   # User account with fish as default shell
   users.users.vlad = {
     isNormalUser = true;
@@ -122,19 +121,37 @@
     virtualbox
     sqlite
     nix-prefetch-git
-    jq   
+    jq
+    godot_4
+    zed
+    nodejs
+    ripgrep
+    bottom
+    btop
+    tmux
     # 3D Software
     freecad
     blender
+
+    # Mix
+    stockfish
+    en-croissant
 
     # Creative apps
     krita
     kdenlive
     inkscape
     audacity
+    obs-studio
 
     # Editors & IDEs
     vscodium
+
+    # Bluetooth пакеты
+    bluez
+
+     # ProjectM
+    projectm
 
     # Browsers
     librewolf
