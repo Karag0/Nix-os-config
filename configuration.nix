@@ -38,7 +38,7 @@
   };
 
   # Sound
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -74,11 +74,6 @@
     qt6.qtmultimedia
     qt6.qtwebengine
 
-    # Добавьте Qt 5 и QML-модули
-    qt5.full
-    qt5.qtdeclarative
-    qt5.qtquickcontrols
-    qt5.qtwebengine
     # OpenGL и Vulkan
     mesa
     libGL
@@ -97,10 +92,9 @@
     qbittorrent
     nemo
     gparted
-    nerdfonts
+    nerd-fonts.hack
 
     # Python versions
-    python39
     python310
     python311
     python3
@@ -121,7 +115,6 @@
     docker
     nixos-generators
     qtcreator
-    kdePackages.kdenlive
     gdb
     virtualbox
     sqlite
@@ -136,6 +129,7 @@
     tmux
     llvmPackages.libstdcxxClang
     python312Packages.pip
+    python3Packages.torch
 
     # 3D Software
     freecad
@@ -149,7 +143,7 @@
 
     # Creative apps
     krita
-    kdenlive
+    kdePackages.kdenlive
     inkscape
     audacity
     obs-studio
@@ -164,9 +158,6 @@
 
     # Bluetooth пакеты
     bluez
-
-     # ProjectM
-    projectm
 
     # Browsers
     librewolf
@@ -193,14 +184,14 @@
     zip
 
     # KDE Apps
-    dolphin
-    konsole
-    kate
-    kcalc
+    kdePackages.dolphin
+    kdePackages.konsole
+    kdePackages.kate
+    kdePackages.kcalc
     kdePackages.kclock
-    kmix
-    kscreen
-    powerdevil
+    kdePackages.kmix
+    kdePackages.kscreen
+    kdePackages.powerdevil
   ];
 
   # Set Alacritty as default terminal emulator via xdg
