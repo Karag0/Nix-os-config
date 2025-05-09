@@ -215,5 +215,5 @@
   };
 programs.nix-ld.enable = true;
   # State version
-  system.stateVersion = "unstable";
+  system.stateVersion = "25.05";
 }
