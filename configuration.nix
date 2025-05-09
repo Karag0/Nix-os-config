@@ -46,9 +46,9 @@
     pulse.enable = true;
   };
   # User account with fish as default shell
-  users.users.x = {
+  users.users.user = {
     isNormalUser = true;
-    description = "x";
+    description = "user";
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
@@ -145,6 +145,8 @@
     stockfish
     en-croissant
     asciiquarium
+    cheese
+
     # Creative apps
     krita
     kdenlive
@@ -187,6 +189,8 @@
     patchelf
     zsh
     ltrace
+    wget
+    zip
 
     # KDE Apps
     dolphin
@@ -211,5 +215,5 @@
   };
 programs.nix-ld.enable = true;
   # State version
-  system.stateVersion = "25.05";
+  system.stateVersion = "unstable";
 }
