@@ -46,9 +46,9 @@
     pulse.enable = true;
   };
   # User account with fish as default shell
-  users.users.user = {
+  users.users.vlad = {
     isNormalUser = true;
-    description = "user";
+    description = "Vlad";
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
@@ -108,8 +108,10 @@
     rustc
     maven
     gradle
-    gcc
+    gcc14
     clang
+    clang-tools
+    nix-index
     go
     lua
     docker
