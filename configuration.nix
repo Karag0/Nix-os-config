@@ -183,7 +183,6 @@
     # Editors & IDEs
     vscodium
     netbeans
-    jupyterlab
     # Дополнительные зависимости
     v4l-utils
     ffmpeg
