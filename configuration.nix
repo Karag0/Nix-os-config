@@ -46,9 +46,9 @@
     pulse.enable = true;
   };
   # User account with fish as default shell
-  users.users.user = {
+  users.users.vlad = {
     isNormalUser = true;
-    description = "user";
+    description = "Vlad";
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
@@ -81,6 +81,7 @@
     vulkan-validation-layers
     shaderc
     vkd3d
+
     # Terminal & Media
     xterm  # Добавлен xterm
     alacritty
@@ -98,7 +99,8 @@
     python310
     python311
     python3
-
+    python314
+    python313
     # Java
     openjdk8
     openjdk17
@@ -111,6 +113,8 @@
     gcc14
     clang
     clang-tools
+    clazy
+
     nix-index
     go
     lua
@@ -123,7 +127,7 @@
     nix-prefetch-git
     jq
     godot_4
-    zed
+    zed-editor
     nodejs
     ripgrep
     bottom
@@ -132,6 +136,26 @@
     llvmPackages.libstdcxxClang
     python312Packages.pip
     python3Packages.torch
+    meson
+    ncurses
+    SDL2
+    sdl3
+    SDL2_image
+    SDL2_mixer
+    SDL2_ttf
+    freetype
+    zlib
+    bzip2
+    gettext
+    intltool
+    libssh
+    icu
+    gimp
+    openssl
+    jetbrains.idea-community
+    opencl-headers
+    ocl-icd
+
 
     # 3D Software
     freecad
