@@ -31,14 +31,16 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  #Other
+  hardware.bluetooth.enable = true;
   # Keyboard layout
+
   services.xserver.xkb = {
     layout = "us,ru";
     options = "grp:alt_shift_toggle";
   };
 
   # Sound
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -46,19 +48,15 @@
     pulse.enable = true;
   };
   # User account with fish as default shell
-  users.users.user = {
+  users.users.vlad = {
     isNormalUser = true;
-    description = "user";
+    description = "Vlad";
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       git
       curl
       vim
-      emacs
-      neovim
-      neovide
-      fish
     ];
   };
 
@@ -77,6 +75,7 @@
     # OpenGL и Vulkan
     mesa
     libGL
+    libglvnd
     vulkan-loader
     vulkan-validation-layers
     shaderc
@@ -91,7 +90,6 @@
     mpv
     cataclysm-dda
     qbittorrent
-    nemo
     gparted
     nerd-fonts.hack
 
@@ -101,10 +99,13 @@
     python3
     python314
     python313
+    python310Packages.tkinter
+
     # Java
     openjdk8
     openjdk17
     openjdk21
+    openjdk24
 
     # Dev tools
     rustc
@@ -114,7 +115,10 @@
     clang
     clang-tools
     clazy
-
+    emacs
+    neovim
+    neovide
+    fish
     nix-index
     go
     lua
@@ -136,6 +140,7 @@
     llvmPackages.libstdcxxClang
     python312Packages.pip
     python3Packages.torch
+    python3Packages.tkinter
     meson
     ncurses
     SDL2
@@ -166,7 +171,7 @@
     en-croissant
     asciiquarium
     cheese
-
+    astroterm
     # Creative apps
     krita
     kdePackages.kdenlive
@@ -177,6 +182,7 @@
 
     # Editors & IDEs
     vscodium
+    netbeans
 
     # Дополнительные зависимости
     v4l-utils
