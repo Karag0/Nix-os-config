@@ -46,9 +46,9 @@
     pulse.enable = true;
   };
   # User account with fish as default shell
-  users.users.vlad = {
+  users.users.user = {
     isNormalUser = true;
-    description = "Vlad";
+    description = "user";
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
