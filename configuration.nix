@@ -94,12 +94,22 @@
     nerd-fonts.hack
 
     # Python versions
-    python310
-    python311
-    python3
-    python314
-    python313
-    python310Packages.tkinter
+    python310Full
+    python311Full
+    python312Full
+    python314Full
+    python313Full
+
+    # Python packages
+    python312Packages.mujoco
+    python312Packages.torchaudio
+    python312Packages.pip
+    python312Packages.torch
+    python312Packages.torchvision
+    python312Packages.opencv4
+    python312Packages.transformers
+    python312Packages.numpy
+    python312Packages.diffusers
 
     # Java
     openjdk8
@@ -138,9 +148,6 @@
     btop
     tmux
     llvmPackages.libstdcxxClang
-    python312Packages.pip
-    python3Packages.torch
-    python3Packages.tkinter
     meson
     ncurses
     SDL2
@@ -155,12 +162,14 @@
     intltool
     libssh
     icu
-    gimp
+    gimp3-with-plugins
     openssl
     jetbrains.idea-community
     opencl-headers
     ocl-icd
-
+    netcat-gnu
+    mujoco
+    opencv
 
     # 3D Software
     freecad
