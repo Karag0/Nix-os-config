@@ -110,7 +110,6 @@
     python312Packages.transformers
     python312Packages.numpy
     python312Packages.diffusers
-
     # Java
     openjdk8
     openjdk17
@@ -165,11 +164,20 @@
     gimp3-with-plugins
     openssl
     jetbrains.idea-community
-    opencl-headers
     ocl-icd
+    opencl-headers
+    opencl-clhpp
     netcat-gnu
     mujoco
     opencv
+    devenv
+    firejail
+    vulkan-tools
+    clinfo
+    pocl
+    nix-ld
+    qemu
+    virt-manager
 
     # 3D Software
     freecad
@@ -181,6 +189,8 @@
     asciiquarium
     cheese
     astroterm
+    briar-desktop
+
     # Creative apps
     krita
     kdePackages.kdenlive
