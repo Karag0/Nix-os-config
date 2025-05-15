@@ -40,6 +40,7 @@
     options = "grp:alt_shift_toggle";
   };
 
+
   # Sound
   security.rtkit.enable = true;
   services.pipewire = {
@@ -47,10 +48,11 @@
     alsa.enable = true;
     pulse.enable = true;
   };
+
   # User account with fish as default shell
-  users.users.user = {
+  users.users.nixuser = {
     isNormalUser = true;
-    description = "user";
+    description = "nixuser";
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
@@ -110,11 +112,15 @@
     python312Packages.transformers
     python312Packages.numpy
     python312Packages.diffusers
-    # Java
+
+     # Java
     openjdk8
     openjdk17
     openjdk21
     openjdk24
+    openjfx17
+    openjfx21
+    openjfx24
 
     # Dev tools
     rustc
@@ -177,7 +183,10 @@
     pocl
     nix-ld
     qemu
-    virt-manager
+    poetry
+    pyright
+    kotlin
+    pkg-config
 
     # 3D Software
     freecad
